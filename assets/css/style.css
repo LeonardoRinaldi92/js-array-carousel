@@ -5,23 +5,41 @@
 }
 
 .container {
-    width: 1500px;
+    width: 600px;
     margin: 3rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0.5rem 6rem 0.5rem ;
+    background-color: rgb(215, 214, 214);
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.371);
 }
 
 img {
     width: 100%;
     display: block;
+    border-radius: 30px;
 }
 
 .prec,
 .next {
-    font-size: 10rem;
+    font-size: 6rem;
     font-weight: 700;
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.801);
+    position: absolute;
+    top:50%;
+    transform: translate(0, -50%);
+}
+
+.prec  {
+    left: 1.5rem;
+}
+
+.next {
+    right: 1.5rem;
 }
 
 .foto {
