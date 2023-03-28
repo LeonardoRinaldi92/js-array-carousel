@@ -11,10 +11,24 @@ for (x=0; x<=photos.length -1; x++) {
   
     if (x==0) {
         document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto prima selected ">`;
+        document.getElementById('sotto').innerHTML += `
+        <div class="prova sottoselected">
+            <img src=" ${photos[x]}">
+        </div>`;
     } else if (x==4) {
         document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto ultima">`;
+        document.getElementById('sotto').innerHTML += `
+        <div class="prova">
+            <img src=" ${photos[x]}">
+        </div>`;
+        
     } else {
         document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto">`;
+        document.getElementById('sotto').innerHTML += `
+        <div class="prova">
+            <img src=" ${photos[x]}">
+        </div>`
+        
     } 
 }
 
