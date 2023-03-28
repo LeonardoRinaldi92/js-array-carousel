@@ -17,8 +17,8 @@ img {
     display: block;
 }
 
-#previous,
-#antecedent {
+.prec,
+.next {
     font-size: 10rem;
     font-weight: 700;
     cursor: pointer;
