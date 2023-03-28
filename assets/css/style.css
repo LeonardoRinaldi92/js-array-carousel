@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1500px;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+#previous,
+#antecedent {
+    font-size: 10rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.foto {
+    display: none;
+}
+
+.selected {
+    display: block;
+}
