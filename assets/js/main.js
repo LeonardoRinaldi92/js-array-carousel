@@ -10,22 +10,22 @@ let photos = [
 for (x=0; x<=photos.length -1; x++) {
   
     if (x==0) {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto prima selected ">`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto prima selected "id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
-        <div class="prova sottoselected prima">
+        <div class="fotoSotto sottoselected prima" id=imgsotto${x}>
             <img src=" ${photos[x]}">
         </div>`;
     } else if (x==4) {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto ultima">`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto ultima" id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
-        <div class="prova ultima">
+        <div class="fotoSotto ultima" id=imgsotto${x}>
             <img src=" ${photos[x]}">
         </div>`;
         
     } else {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto">`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto" id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
-        <div class="prova">
+        <div class="fotoSotto"id=imgsotto${x}>
             <img src=" ${photos[x]}">
         </div>`
         
@@ -57,19 +57,43 @@ next.addEventListener( 'click', function(){
 
 })
 
+
 prec.addEventListener( 'click', function(){
 
     let SelectedPhoto = document.querySelector('img.selected')
+    let SelectedThumbnail = document.querySelector('div.sottoselected')
     let photoToSwitch = SelectedPhoto.previousElementSibling
+    let ThumbnailToSwitch = SelectedThumbnail.previousElementSibling
 
 
-    if( SelectedPhoto.classList.contains('prima') ){
+    if( SelectedPhoto.classList.contains('prima') && SelectedThumbnail.classList.contains('prima')){
         photoToSwitch = document.querySelector('.ultima')
+        ThumbnailToSwitch = document.querySelector('div.ultima')
     }
 
     SelectedPhoto.classList.remove('selected')
+    SelectedThumbnail.classList.remove('sottoselected')
+
     photoToSwitch.classList.add('selected')
+    ThumbnailToSwitch.classList.add('sottoselected')
 
 })
-    
 
+let fotoSotto = document.querySelectorAll('.fotoSotto')
+
+for (i = 0; i < fotoSotto.length; i++) {
+    let element = fotoSotto[i];
+
+    element.addEventListener('click', function(){
+        if (! element.classList.contains('sottoselected')){
+            document.querySelector('.sottoselected').classList.remove('sottoselected');
+            element.classList.add('sottoselected')
+            document.querySelector('.selected').classList.remove('selected');
+            for (x = 0; x < fotoSotto.length; x++) {
+                if(element === fotoSotto[x]) {
+                    document.getElementById('img' + x).classList.add('selected')
+                }
+            }
+        }
+    })
+}
