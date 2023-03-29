@@ -81,11 +81,11 @@ height: 100%;
     width: 100%;
     display: block;
     cursor: pointer;
-    filter: brightness(0.3);
+    filter: brightness(0.2);
     object-position: 100% 100%;
  }
 
- .sottoselected {filter: brightness(3)
+ .sottoselected {filter: brightness(5)
     
  }
 
