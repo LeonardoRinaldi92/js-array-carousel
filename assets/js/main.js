@@ -104,21 +104,14 @@ for (i = 0; i < fotoSotto.length; i++) {
 
     //funzione al click su "element"
     element.addEventListener('click', function(){
-        //se l'immagine NON  contiene sottoselected
-        if (! element.classList.contains('sottoselected')){
-            //cerca l'immagine che contiene sottoselcted rimuove
-            document.querySelector('.sottoselected').classList.remove('sottoselected');
-            //aggiunge a "element" sottoselected
-            element.classList.add('sottoselected')
-            //cerca l'immagine che contiene selected e rimuoviglielo
-            document.querySelector('.selected').classList.remove('selected');
-            //cicla sulla lunghezza di fotosotto(che contiene un numero immagini a uguali a foto sopra)
-            for (x = 0; x < fotoSotto.length; x++) {
-                //se l'"element" selezionato è identico fotosotto ciclato con X
-                if(element === fotoSotto[x]) {
-                    //prendi un elemento che contiene l'id img + x(ciclata) e aggiungi "selected"
-                    document.getElementById('img' + x).classList.add('selected')
-                }
+        
+        if (! element.classList.contains('sottoselected')){     //se l'immagine NON  contiene sottoselected            
+            document.querySelector('.sottoselected').classList.remove('sottoselected');   //cerca l'immagine che contiene sottoselcted rimuove
+            element.classList.add('sottoselected') //aggiunge a "element" sottoselected
+            document.querySelector('.selected').classList.remove('selected'); //cerca l'immagine che contiene selected e rimuoviglielo
+            for (x = 0; x < fotoSotto.length; x++) {   //cicla sulla lunghezza di fotosotto(che contiene un numero immagini a uguali a foto sopra)
+                if(element === fotoSotto[x]) { //se l'"element" selezionato è identico fotosotto ciclato con X
+                    document.getElementById('img' + x).classList.add('selected')}//prendi un elemento che contiene l'id img + x(ciclata) e aggiungi "selected"
             }
         }
     })
