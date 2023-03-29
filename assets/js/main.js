@@ -1,37 +1,38 @@
 //array foto
+let path = './assets/img/'
 
 let photos = [
-    './assets/img/01.webp' ,
-    './assets/img/02.webp' ,
-    './assets/img/03.webp' ,
-    './assets/img/04.webp' ,
-    './assets/img/05.webp' 
+    '01.webp' ,
+    '02.webp' ,
+    '03.webp' ,
+    '04.webp' ,
+    '05.webp' 
 ]
 
 //ciclo che prende in cosiderazione array foto
 for (x=0; x<=photos.length -1; x++) {
-    // se x uguale a zero stampa "prima" e selected su foto e thumbnails
+    // se x uguale a zero stampa "prima" e selected su foto e thumbnails + id univoco
     if (x==0) {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto prima selected "id=img${x}>`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${path}${photos[x]}" class="foto prima selected "id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
         <div class="fotoSotto sottoselected prima" id=imgsotto${x}>
-            <img src=" ${photos[x]}">
+            <img src="${path}${photos[x]}">
         </div>`;
 
-    //se x uguale a zero stampa "ultima" 
+    //se x uguale a zero stampa "ultima"  + id univoco
     } else if (x==4) {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto ultima" id=img${x}>`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${path}${photos[x]}" class="foto ultima" id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
         <div class="fotoSotto ultima" id=imgsotto${x}>
-            <img src=" ${photos[x]}">
+            <img src=" ${path}${photos[x]}">
         </div>`;
         
-    //se x diersa da 0 e 5 stampa normale
+    //se x diersa da 0 e 5 stampa normale + id univoco
     } else {
-        document.getElementById('carousel').innerHTML += `<img src=" ${photos[x]}" class="foto" id=img${x}>`;
+        document.getElementById('carousel').innerHTML += `<img src=" ${path}${photos[x]}" class="foto" id=img${x}>`;
         document.getElementById('sotto').innerHTML += `
         <div class="fotoSotto"id=imgsotto${x}>
-            <img src=" ${photos[x]}">
+            <img src=" ${path}${photos[x]}">
         </div>`
         
     } 
@@ -44,7 +45,7 @@ const prec = document.querySelector('.prec')
 //funzione al click di next 
 next.addEventListener( 'click', function(){
 
-    //prendi in considerazione chi ha la classe "selected " oppure "sottoselected"
+    //prendi in considerazione chi ha la classe "selected " oppure "sottoselected" 
     let SelectedPhoto = document.querySelector('img.selected')
     let SelectedThumbnail = document.querySelector('div.sottoselected')
     //seleziona l'elemento fratello di..
