@@ -21,6 +21,8 @@
 height: 100%;
 }
 
+
+
 #carousel img {
     height: 100%;
     border-radius: 30px;
@@ -77,6 +79,12 @@ height: 100%;
     overflow: hidden;
  }
 
+ .fotoSotto:hover {
+    height: 80px;
+    filter: brightness(5);
+    border-radius: 20px;
+ }
+
  #sotto img{
     width: 100%;
     display: block;
@@ -93,4 +101,5 @@ height: 100%;
  .prec:hover {
     color: white;
     filter: brightness(8);
+    font-size: 7rem;
  }
